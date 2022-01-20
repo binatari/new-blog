@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.swiper-button-next {
+     color: red !important;
+}
+.frjscc{
+    flex-direction: row-reverse;
+}
+
+.bYKAVh > .wrapper{
+    z-index: 9999 !important;
+}
