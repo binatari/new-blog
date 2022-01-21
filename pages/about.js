@@ -35,7 +35,7 @@ const about = ({bio, articles, categories}) => {
                     <img src={require('../public/images/purple-snapchat.jpg').default.src} alt="" />
                   </a>
                   <a className="flex h-10 text-center justify-center md:py-0">
-                    <img src={require('../public/images/Twitter.jpg').default.src} alt="" />
+                    <img src={require('../public/images/twitter.jpg').default.src} alt="" />
                   </a>
                 </ul>
                 <div className="grid grid-cols-2">
