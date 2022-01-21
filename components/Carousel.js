@@ -20,7 +20,15 @@ export default function Carousel({ articles }) {
   const [thumbsSwiper, setThumbsSwiper] = useState(null)
 
   return (
-    <div className="h-full w-full md:w-4/5">
+    <div className="h-full w-full md:w-4/5 relative">
+       <div className="absolute h-[70%] w-[10%] flex md:hidden flex-col items-center justify-center left-[5%] z-50">
+            <div className="prev cursor-pointer h-10 w-10 mb-1 p-2 rounded-full bg-white">
+              <img src={require('../public/images/leftft.svg').default.src}  className="h-full w-full" alt="" />
+            </div>
+            <div className="next cursor-pointer h-10 w-10 mt-1 p-2 rounded-full bg-[#D43B81]">
+            <img src={require('../public/images/right.svg').default.src}  className="h-full w-full" alt="" />
+            </div>
+          </div>
       <Swiper
         spaceBetween={10}
         navigation={{
@@ -58,7 +66,7 @@ export default function Carousel({ articles }) {
                   {article.attributes.title}
                 </p>
                 <Link href={`/article/${article.attributes.slug}`}>
-                    <a className="border border-blue-700 py-2 px-4">Read More</a>
+                    <a className="border border-[#D43B81] py-2 px-4">Read More</a>
                 </Link>
               </div>
             </SwiperSlide>

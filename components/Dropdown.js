@@ -1,13 +1,15 @@
 
-
+import Link from "next/link"
 const Dropdown = ({category}) => {
     return (
         <>
              <div class="group inline-block relative">
         <button
-          class=" text-black group-hover:text-purple-500 font-semibold py-2 px-4 rounded inline-flex items-center"
+          class=" text-black group-hover:text-[#D43B81] font-semibold py-2 px-4 rounded inline-flex items-center"
         >
-          <span class="mr-1">{category.attributes.name}</span>
+          <Link href={`/category/${category.attributes.slug}`}>
+          <a class="mr-1">{category.attributes.name}</a>
+          </Link>
           <svg
             class="fill-current h-4 w-4"
             xmlns="http://www.w3.org/2000/svg"
@@ -21,7 +23,7 @@ const Dropdown = ({category}) => {
         <ul class="absolute hidden text-black bg-white pt-1 group-hover:block z-50">
           {
           category.attributes.subcategories.data.map((sub, i)=>
-            (<li class={i == 0 && 'border-t-2 border-purple-500'} key={i}>
+            (<li class={i == 0 && 'border-t-2 border-[#D43B81]'} key={i}>
             <a
               class=" py-2 px-4 block whitespace-no-wrap text-black"
               href="#"

@@ -5,6 +5,8 @@ import Layouts from "../components/Layouts"
 import Seo from "../components/Seo"
 import axios from "axios"
 import Pagination from "@material-ui/lab/Pagination"
+import { motion } from "framer-motion";
+import { fadeIn, staggerContainer } from "../lib/variants";
 import { useState } from "react"
 import { useQuery } from "react-query"
 import { fetchAPI, getStrapiURL } from "../lib/api"
@@ -34,17 +36,18 @@ const Home = ({ articles, categories, homepage, pagination, pageCount }) => {
       <Seo seo={homepage.attributes.seo} />
       <div className="container mx-auto pt-6">
       <div className="h-screen">
-        <div className="h-full flex">
+        <motion.div variants={fadeIn('down')} initial="initial" whileInView="animate"
+      viewport={{ once: true }} className="h-full flex">
           <div className=" h-[70%] w-[10%] hidden md:flex flex-col items-center justify-center left-[5%] z-50 relative">
             <div className="prev cursor-pointer h-10 w-10 mb-1 p-2 rounded-full bg-white">
               <img src={require('../public/images/leftft.svg').default.src}  className="h-full w-full" alt="" />
             </div>
-            <div className="next cursor-pointer h-10 w-10 mt-1 p-2 rounded-full bg-[#BE85C8]">
+            <div className="next cursor-pointer h-10 w-10 mt-1 p-2 rounded-full bg-[#D43B81]">
             <img src={require('../public/images/right.svg').default.src}  className="h-full w-full" alt="" />
             </div>
           </div>
           <Carousel articles={articles}/>
-        </div>
+        </motion.div>
       </div>
       {
         data && <Posts articles={data.data}/>

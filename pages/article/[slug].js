@@ -65,7 +65,7 @@ export async function getStaticProps({ params }) {
     },
     populate: "*",
   })
-  const categoriesRes = await fetchAPI("/categories")
+  const categoriesRes = await fetchAPI("/categories", {populate: "*" })
   const articles = await fetchAPI("/articles", { populate: "*" })
   return {
     props: { article: articlesRes.data[0], categories: categoriesRes, allArticles:articles.data },

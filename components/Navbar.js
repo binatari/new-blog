@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Transition } from "@headlessui/react";
 import Link from "next/link"
+import { motion } from "framer-motion";
+import { fadeIn, staggerContainer } from "../lib/variants";
 import Dropdown from "./Dropdown";
 import Autocomplete from "./Autocomplete";
 
@@ -12,8 +14,9 @@ const Navbar = ({categories, articles}) => {
             <nav className="bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
-            <div className="flex items-center justify-between w-full">
-              <div className="flex-shrink-0">
+            <motion.div variants={staggerContainer} initial="initial" whileInView="animate"
+      viewport={{ once: true }} className="flex items-center justify-between w-full">
+              <motion.div variants={fadeIn('down')} className="flex-shrink-0">
               <Link href='/'>
                 <img
                   className="h-20 w-20 cursor-pointer"
@@ -21,8 +24,8 @@ const Navbar = ({categories, articles}) => {
                   alt="efe"
                 />
                 </Link>
-              </div>
-              <div className="hidden md:block">
+              </motion.div>
+              <motion.div variants={fadeIn('down')} className="hidden md:block">
                 <div className="ml-10 flex items-baseline space-x-4">
                 <Link href={`/`}>
                       <a className="font-semibold py-2 px-4">
@@ -40,11 +43,11 @@ const Navbar = ({categories, articles}) => {
                       </a>
                     </Link>
                 </div>
-              </div>
-              <div className="w-40 border-b border-black hidden md:block">
+              </motion.div>
+              <motion.div variants={fadeIn('down')} className="w-40 border-b border-black hidden md:block">
                   <Autocomplete articles={articles}/>
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
             <div className="-mr-2 flex md:hidden">
               <button
                 onClick={() => setIsOpen(!isOpen)}
@@ -105,21 +108,21 @@ const Navbar = ({categories, articles}) => {
             <div className="md:hidden" id="mobile-menu">
               <div ref={ref} className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
               <Link href={`/`}>
-                      <a className="hover:text-blue-700 text-black block px-3 py-2 rounded-md text-base font-medium text-center">
+                      <a className="hover:text-[#D43B81] text-black block px-3 py-2 rounded-md text-base font-medium text-center">
                       Home
                       </a>
                     </Link>
               {categories.map((category) => {
                 return (
                     <Link href={`/category/${category.attributes.slug}`} key={category.id}>
-                      <a className="hover:text-blue-700 text-black block px-3 py-2 rounded-md text-base font-medium text-center">
+                      <a className="hover:text-[#D43B81] text-black block px-3 py-2 rounded-md text-base font-medium text-center">
                         {category.attributes.name}
                       </a>
                     </Link>
                 )
               })}
                <Link href={`/about`}>
-                      <a className="hover:text-blue-700 text-black block px-3 py-2 rounded-md text-base font-medium text-center">
+                      <a className="hover:text-[#D43B81] text-black block px-3 py-2 rounded-md text-base font-medium text-center">
                         About
                       </a>
                     </Link>
