@@ -47,6 +47,17 @@ const Home = ({ articles, categories, homepage, pagination, pageCount }) => {
             </div>
           </div>
           <Carousel articles={articles}/>
+          <div className=" h-[70%] w-[5%] hidden md:flex flex-col items-center justify-center z-50 relative">
+            <a className=" cursor-pointer h-10 w-10 mb-6  p-2 rounded-full bg-white"  href='https://instagram.com/itz_efe?utm_medium=copy_link'>
+              <img src={require('../public/images/insta-pink.png').default.src}   className="h-full w-full" alt="" />
+            </a>
+            <a className="cursor-pointer h-10 w-10 mb-6  p-2 rounded-full">
+            <img src={require('../public/images/twitter-pink.png').default.src}  className="h-full w-full" alt="" />
+            </a>
+            <a className="cursor-pointer h-10 w-10  p-2 rounded-full" href="https://www.snapchat.com/add/itz_efe">
+            <img src={require('../public/images/snapchat-pink.png').default.src}  className="h-full w-full" alt="" />
+            </a>
+          </div>
         </motion.div>
       </div>
       {

@@ -6,7 +6,7 @@ import Images from "./Images"
 import { Swiper, SwiperSlide } from "swiper/react"
 
 //import Swiper core and required modules
-import SwiperCore, { FreeMode, Navigation, Thumbs } from "swiper"
+import SwiperCore, { FreeMode, Navigation, Thumbs,  Autoplay, } from "swiper"
 
 import "swiper/css"
 import "swiper/css/free-mode"
@@ -14,7 +14,7 @@ import "swiper/css/navigation"
 import "swiper/css/thumbs"
 
 // install Swiper modules
-SwiperCore.use([FreeMode, Navigation, Thumbs])
+SwiperCore.use([FreeMode, Navigation, Thumbs, Autoplay,])
 
 export default function Carousel({ articles }) {
   const [thumbsSwiper, setThumbsSwiper] = useState(null)
@@ -22,11 +22,9 @@ export default function Carousel({ articles }) {
   return (
     <div className="h-full w-full md:w-4/5 relative">
        <div className="absolute h-[70%] w-[10%] flex md:hidden flex-col items-center justify-center left-[5%] z-50">
-            <div className="prev cursor-pointer h-10 w-10 mb-1 p-2 rounded-full bg-white">
-              <img src={require('../public/images/leftft.svg').default.src}  className="h-full w-full" alt="" />
+            <div className="prev cursor-pointer h-0 w-0 mb-1 p-2 rounded-full bg-transparent">
             </div>
-            <div className="next cursor-pointer h-10 w-10 mt-1 p-2 rounded-full bg-[#D43B81]">
-            <img src={require('../public/images/right.svg').default.src}  className="h-full w-full" alt="" />
+            <div className="next cursor-pointer h-0 w-0 mt-1 p-2 rounded-full bg-transparent">
             </div>
           </div>
       <Swiper
@@ -34,6 +32,10 @@ export default function Carousel({ articles }) {
         navigation={{
           prevEl: '.prev',
           nextEl: '.next',
+        }}
+        autoplay={{
+          "delay": 2500,
+          "disableOnInteraction": false
         }}
         thumbs={{ swiper: thumbsSwiper }}
         className="mySwiper2 h-[70%] w-full"
@@ -58,11 +60,10 @@ export default function Carousel({ articles }) {
           return (
             <SwiperSlide className="flex items-center justify-center py-4 px-6 h-full self-center">
               <div className="flex flex-col items-center justify-center">
-                <p id="category" className="py-4 text-black text-center capitalize">
-                {console.log(article.attributes.category.data?.attributes.name)}
+                <p id="category" className="p-4 text-black text-center capitalize">
                   {article.attributes.category.data?.attributes.name}
                 </p>
-                <p id="title" className="py-4 text-center font-semibold text-xl">
+                <p id="title" className="pb-4 text-center font-semibold text-xl">
                   {article.attributes.title}
                 </p>
                 <Link href={`/article/${article.attributes.slug}`}>

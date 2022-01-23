@@ -4,7 +4,9 @@ import { fetchAPI } from "../../lib/api"
 import Layouts from "../../components/Layouts"
 import Images from "../../components/Images"
 import Seo from "../../components/Seo"
+
 import { getStrapiMedia } from "../../lib/media"
+import Comments from "../../components/Comments"
 
 const Article = ({ article, categories, allArticles }) => {
   const imageUrl = getStrapiMedia(article.attributes.image)
@@ -15,6 +17,8 @@ const Article = ({ article, categories, allArticles }) => {
     shareImage: article.attributes.image,
     article: true,
   }
+
+  
 
   return (
     <Layouts categories={categories.data} articles={allArticles}>
@@ -36,6 +40,10 @@ const Article = ({ article, categories, allArticles }) => {
             escapeHtml={false}
           />
         </div>
+      </div>
+      <div className="w-4/5 mx-auto">
+        <h3 className="text-3xl font-bold py-16">Comments</h3>
+        <Comments id={article.attributes.slug} name={article.attributes.title}/>
       </div>
       <div className="py-24">
 
