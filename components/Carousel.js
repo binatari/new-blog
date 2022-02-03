@@ -67,7 +67,7 @@ export default function Carousel({ articles }) {
                   {article.attributes.title}
                 </p>
                 <Link href={`/article/${article.attributes.slug}`}>
-                    <a className="border border-[#D43B81] py-2 px-4">Read More</a>
+                    <a className="border border-[#D43B81] py-2 px-4 hover:text-white hover:bg-[#D43B81] transition-all">Read More</a>
                 </Link>
               </div>
             </SwiperSlide>

@@ -24,10 +24,10 @@ const Article = ({ article, categories, allArticles }) => {
     <Layouts categories={categories.data} articles={allArticles}>
       <Seo seo={seo} />
       <div className="container mx-auto">
-        <ul className="flex mx-auto w-[90%] px-4 md:w-4/5 justify-between items-center pt-4 border-t border-black my-10">
+        <ul className="flex mx-auto w-[90%] px-2 md:px-4 md:w-4/5 justify-between items-center pt-4 border-t border-black my-10">
           <li><Moment format="Do MMMM, YYYY" date={article.attributes.createdAt}/></li>
-          <li className="capitalize">{article.attributes.category.data.attributes.name}</li>
-          <li>by {article.attributes.author.data.attributes.name}</li>
+          <li className="capitalize text-center">{article.attributes.category.data.attributes.name}</li>
+          <li className="text-center">by {article.attributes.author.data.attributes.name}</li>
         </ul>
         <h1 className="text-center mx-auto py-8 font-semibold text-xl">{article.attributes.title}</h1>
         <div className="w-4/5 h-[27rem] mx-auto">

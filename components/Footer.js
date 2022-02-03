@@ -16,10 +16,10 @@ const Footer = () => {
                 <p className='flex order-2 text-center w-full md:w-1/5 justify-center md:order-first'>2022 all rights reserved</p>
                 <ul className='flex w-full md:w-3/5 flex-col md:flex-row md:justify-between'>
                 
-                <Link href={'/'}><li className='flex h-10 md:mr-4 text-center justify-center py-4 md:py-0 cursor-pointer'><a className='flex items-center justify-center'>Home</a></li></Link>
-                <Link href={'/category/wellness'}><li className='flex h-10 md:mr-4 text-center justify-center py-4 md:py-0 cursor-pointer'><a className='flex items-center justify-center'>Wellness</a></li></Link>
-                <Link href={'/category/motivation'}><li className='flex h-10 md:mr-4 text-center justify-center py-4 md:py-0 cursor-pointer'><a className='flex items-center justify-center'>Motivation</a></li></Link>
-                <Link href={'/about'}><li className='flex h-10 text-center justify-center py-4 md:py-0 cursor-pointer'><a className='flex items-center justify-center'>About</a></li></Link>
+                <Link href={'/'}><li className='flex h-10 md:mr-4 text-center justify-center py-4 md:py-0 cursor-pointer'><a className='flex items-center justify-center hover:text-[#D43B81]'>Home</a></li></Link>
+                <Link href={'/category/wellness'}><li className='flex h-10 md:mr-4 text-center justify-center py-4 md:py-0 cursor-pointer'><a className='flex items-center justify-center hover:text-[#D43B81]'>Wellness</a></li></Link>
+                <Link href={'/category/motivation'}><li className='flex h-10 md:mr-4 text-center justify-center py-4 md:py-0 cursor-pointer'><a className='flex items-center justify-center hover:text-[#D43B81]'>Motivation</a></li></Link>
+                <Link href={'/about'}><li className='flex h-10 text-center justify-center py-4 md:py-0 cursor-pointer'><a className='flex items-center justify-center hover:text-[#D43B81]'>About</a></li></Link>
                 </ul>
             </div>
         </footer>

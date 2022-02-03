@@ -28,7 +28,7 @@ const Navbar = ({categories, articles}) => {
               <motion.div variants={fadeIn('down')} className="hidden md:block">
                 <div className="ml-10 flex items-baseline space-x-4">
                 <Link href={`/`}>
-                      <a className="font-semibold py-2 px-4">
+                      <a className="hover:text-[#D43B81] font-semibold py-2 px-4">
                       Home
                       </a>
                     </Link>
@@ -38,7 +38,7 @@ const Navbar = ({categories, articles}) => {
                 )
               })}
               <Link href={`/about`}>
-                      <a className="font-semibold py-2 px-4">
+                      <a className="hover:text-[#D43B81] font-semibold py-2 px-4">
                         About
                       </a>
                     </Link>

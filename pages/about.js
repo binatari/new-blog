@@ -21,7 +21,7 @@ const about = ({bio, articles, categories}) => {
             </motion.div>
             <motion.h1 variants={fadeIn('down')} className="text-3xl font-semibold">ABOUT ME</motion.h1>
             <motion.p variants={fadeIn('down')} className="text-center">{!text? shorten(bio.data.attributes.Description) : bio.data.attributes.Description}</motion.p>
-            <motion.button variants={fadeIn('down')} className="border border-blue-700 py-2 px-4 mr-4 text-blue-700" onClick={()=>setText(!text)}>{!text ? 'Read more':'Read less'}</motion.button>
+            <motion.button variants={fadeIn('down')} className="border border-[#D43B81] py-2 px-4 mr-4 text-[#D43B81]" onClick={()=>setText(!text)}>{!text ? 'Read more':'Read less'}</motion.button>
             </motion.div>
             <div>
               <motion.div variants={fadeIn('down')} initial="initial" animate="animate"
